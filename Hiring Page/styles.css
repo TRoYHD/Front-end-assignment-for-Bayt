@@ -1,6 +1,45 @@
-.tab-content {
-    display: none;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.rectangular {
+    border-radius: 4px; /* Adjust the value to make the corners less rounded */
 }
-.tab-content.active {
-    display: block;
+.scrollable-content {
+    height: 80%; /* Adjust the height as needed */
+    overflow-y: scroll;
+    padding-right: 16px; /* Ensure scrollbar doesn't overlap the text */
+    box-sizing: content-box; /* Ensure padding-right works correctly */
+}
+.scrollable-content::-webkit-scrollbar {
+    width: 13px; /* Width of the scrollbar */
+}
+.scrollable-content::-webkit-scrollbar-thumb {
+    background: #c0c0c0; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Roundness of the scroll thumb */
+}
+.scrollable-content::-webkit-scrollbar-thumb:hover {
+    background: #a0a0a0; /* Color when hovered */
+}
+.scrollable-content::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Color of the track */
+}
+.scrollable-content::-webkit-scrollbar-button {
+    display: none; /* Hide the arrows */
+}
+.custom-select {
+padding-right: 85px; /* Adjust the padding value to move the arrow further from the border */
+padding-left: 6px; /* Adjust the left padding as needed */
+appearance: none; /* Remove default arrow */
+ background: url('photos/iconforshortlisted.png') no-repeat right center; /* Add custom arrow icon */
+ background-position: calc(100% - 10px) center; /* Position the arrow icon */
+ background-size: 20px 20px; /* Adjust the size of the custom arrow icon */
+ background-color: white; /* Background color to match  design */
+}
+/* Swipe animation */
+.swipe-card {
+    transition: transform 0.5s ease-in-out;
+}
+
+.swipe-card.swiped {
+    transform: translateX(100%);
 }

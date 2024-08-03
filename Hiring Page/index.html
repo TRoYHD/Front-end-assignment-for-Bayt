@@ -6,72 +6,44 @@
     <title>Profile Card</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <style>
-           .rectangular {
-            border-radius: 4px; /* Adjust the value to make the corners less rounded */
-        }
-        .scrollable-content {
-            height: 80%; /* Adjust the height as needed */
-            overflow-y: scroll;
-            padding-right: 16px; /* Ensure scrollbar doesn't overlap the text */
-            box-sizing: content-box; /* Ensure padding-right works correctly */
-        }
-        .scrollable-content::-webkit-scrollbar {
-            width: 13px; /* Width of the scrollbar */
-        }
-        .scrollable-content::-webkit-scrollbar-thumb {
-            background: #c0c0c0; /* Color of the scrollbar thumb */
-            border-radius: 10px; /* Roundness of the scroll thumb */
-        }
-        .scrollable-content::-webkit-scrollbar-thumb:hover {
-            background: #a0a0a0; /* Color when hovered */
-        }
-        .scrollable-content::-webkit-scrollbar-track {
-            background: #f0f0f0; /* Color of the track */
-        }
-        .scrollable-content::-webkit-scrollbar-button {
-            display: none; /* Hide the arrows */
-        }
-    </style>
 </head>
 <body class="bg-gray-200">
     <!-- Full Width Header -->
-    <div class="bg-white shadow-md border-b border-gray-300 flex items-center justify-between px-60" style="height: 120px;">
+    <div class="bg-white border-b border-gray-300 flex flex-wrap items-center justify-between px-6 md:px-20 lg:px-40 xl:px-60" style="height: 120px;">
         <!-- Left Section -->
-        <div class="flex items-center h-full space-x-10">
+        <div class="flex items-center h-full space-x-4 md:space-x-6 lg:space-x-10">
             <!-- Vertical Line -->
             <div class="h-full border-l border-gray-300"></div>
             <!-- Annotate Section -->
             <div class="flex flex-col items-start">
-                <span class="text-gray-700 mb-4">Annotate</span>
-                <div class="flex mt-2 space-x-4">
-                    <img src="photos/pin blue.png" alt="Annotate Icon 1" class="h-8 w-10 mb-3">
-                    <img src="photos/paperwithPen.png" alt="Annotate Icon 2" class="h-8 w-10 mr-1">
-                    <img src="photos/stick.png" alt="Annotate Icon 3" class="h-8 w-10 mb-3">
-                    <img src="photos/buletspoints.png" alt="Annotate Icon 4" class="h-8 w-10 mr-1">
+                <span class="text-gray-700 mb-2 md:mb-4 font-semibold">Annotate</span>
+                <div class="flex mt-2 space-x-2 md:space-x-4">
+                    <img src="photos/pin blue.png" alt="Annotate Icon 1" class="h-6 w-8 md:h-8 md:w-10">
+                    <img src="photos/paperwithPen.png" alt="Annotate Icon 2" class="h-6 w-8 md:h-8 md:w-10">
+                    <img src="photos/stick.png" alt="Annotate Icon 3" class="h-5 w-6 md:h-7 md:w-9">
+                    <img src="photos/buletspoints.png" alt="Annotate Icon 4" class="h-6 w-8 md:h-8 md:w-10">
                 </div>
             </div>
             <!-- Vertical Line -->
             <div class="h-full border-l border-gray-300"></div>
             <!-- Manage Section -->
             <div class="flex flex-col items-start">
-                <span class="text-gray-700 mb-4">Manage</span>
-                <div class="flex mt-2 space-x-4">
-                    <img src="photos/2paper.png" alt="Manage Icon 1"  class="h-8 w-8 mb-4">
-                    <img src="photos/folder.png" alt="Manage Icon 2"  class="h-8 w-8 mr-1">
+                <span class="text-gray-700 mb-2 md:mb-4 font-semibold">Manage</span>
+                <div class="flex mt-2 space-x-2 md:space-x-4">
+                    <img src="photos/2paper.png" alt="Manage Icon 1" class="h-6 w-8 md:h-7 md:w-9">
+                    <img src="photos/folder.png" alt="Manage Icon 2" class="h-6 w-8 md:h-8 md:w-8">
                 </div>
             </div>
             <!-- Vertical Line -->
             <div class="h-full border-l border-gray-300"></div>
         </div>
-
         <!-- Right Section -->
-        <div class="flex items-center h-full" style="margin-right: 600px;">
+        <div class="flex items-center h-full mt-4 md:mt-0 ml-auto">
             <!-- Vertical Line -->
-            <div class="h-full border-l border-gray-300 ml-4"></div>
+            <div class="h-full border-l border-gray-300 ml-2"></div>
             <div class="flex flex-col items-center ml-4">
-                <span class="text-gray-700 mb-2">Set Hiring Stage</span>
-                <select id="hiringStage" class="border border-gray-300 rounded p-2 mt-4" style="border-radius: 4px; padding: 7px 40px 7px 6px;">
+                <span class="text-gray-700 mb-2  mr-10 font-medium">Set Hiring Stage</span>
+                <select id="hiringStage" class="custom-select border border-gray-300 rounded p-1 mt-4" style="border-radius: 4px;">
                     <option value="shortlisted">Shortlisted</option>
                     <option value="interview">Interview</option>
                     <option value="hired">Hired</option>
@@ -79,18 +51,17 @@
             </div>
         </div>
     </div>
-
     <!-- Content below the header -->
-    <div class="container mx-auto mt-10 flex" style="max-width: 90%;">
-        <div style="width: 50%; margin-left: 110px;">
+    <div class="container mx-auto mt-10 flex flex-wrap lg:flex-nowrap" style="max-width: 90%;">
+        <div class="w-full lg:w-2/3 mb-10 lg:mb-0">
             <!-- Status Section -->
-            <div class="bg-white p-6 rectangular shadow-md border border-gray-300 mb-6">
+            <div class="bg-white p-6 rectangular border border-gray-300 mb-6">
                 <div class="flex items-center">
                     <img src="photos/hired.png" alt="Hired" class="h-10 w-10">
                     <div class="ml-2">
                         <span class="text-lg font-semibold">Hired</span>
                     </div>
-                    <div class="ml-8 text-gray-600 flex space-x-8 w-full justify-between">
+                    <div class="ml-8 text-gray-600 flex space-x-4 md:space-x-6 lg:space-x-8 w-full justify-between">
                         <div class="flex flex-col items-center">
                             <span class="text-gray-500">Division</span>
                             <span class="font-semibold">Technology</span>
@@ -115,57 +86,57 @@
             </div>
 
             <!-- Profile Card -->
-            <div class="bg-white rectangular shadow-md overflow-hidden profile-card flex border border-gray-300 mb-6" style="min-height: 320px;">
-                <div class="w-1/3 p-9">
+            <div class="bg-white rectangular overflow-hidden profile-card flex border border-gray-300 mb-6 swipe-card">
+                <div class="w-1/4 p-6">
                     <img class="h-full w-full object-cover" src="photos/girl.png" alt="Profile Image">
                 </div>
-                <div class="w-2/3 p-4 flex flex-col justify-between">
+                <div class="w-2/3 p-2 flex flex-col justify-between">
                     <div class="mt-4">
                         <span class="text-black text-lg font-bold">Yasmin</span>
-                        <a href="#" class="text-blue-500 text-lg leading-tight font-medium hover:underline">(Reveal Full Name)</a>
-                        <p class="block mt-1 text-lg leading-tight text-black">Graphic Designer</p>
+                        <a href="#" class="text-blue-400 text-lg leading-tight font-medium hover:underline">(Reveal Full Name)</a>
+                        <p class="block mt-2 text-lg leading-tight text-black">Graphic Designer</p>
                         <p class="mt-2 text-gray-500 underline">Infoart printing & advertising</p>
-                        <div class="mt-5">
-                        <p class="mt-1 text-gray-500"><span class="text-black font-semibold">Location:</span> <span class="ml-12"></span> Amman, Jordan</p>
-                        <p class="mt-1 text-gray-500"><span class="text-black font-semibold">Education:</span> <span class="ml-10"></span> Master’s Degree, Graphic Design</p>
-                        <p class="mt-1 text-gray-500"><span class="text-black font-semibold">Experience:</span> <span class="ml-9"></span> 4 Years, 6 Months</p>
+                        <div class="mt-4">
+                            <p class="mt-1 text-gray-500"><span class="text-black font-semibold">Location:</span> <span class="ml-12"></span> Amman, Jordan</p>
+                            <p class="mt-1 text-gray-500"><span class="text-black font-semibold">Education:</span> <span class="ml-10"></span> Master’s Degree, Graphic Design</p>
+                            <p class="mt-1 text-gray-500"><span class="text-black font-semibold">Experience:</span> <span class="ml-9"></span> 4 Years, 6 Months</p>
+                        </div>
                     </div>
-                    </div>
-                    <div class="mb-3 p-2 ">
-                        <button class="bg-yellow-400 text-white py-3 px-8 rounded contact-btn flex items-center">
-                            <img src="photos/contact.png" alt="Contact Icon" class="h-8 w-8 mr-2"> 
-                            Contact
+                    <div class="mb-2 p-2">
+                        <button class="bg-yellow-400 text-white py-3 px-8 rounded contact-btn flex items-center swipe-button">
+                            <img src="photos/mail.png" alt="Contact Icon" class="h-6 w-7 -ml-5 mr-2">
+                            <span class="text-xl">Contact</span>
                         </button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Activities on CV Container -->
-        <div style="width: 35%; margin-left: 30px;">
+       <!-- Activities on CV Container -->
+       <div class="w-full lg:w-1/3 lg:ml-6">
             <!-- Activities on CV -->
-            <div class="bg-white shadow-md border border-gray-300" style="height: 500px;">
-                <div class="p-4" style="height: 103%; overflow-y: auto;">
-                    <h5 class="text-xl font-bold">Activities on CV</h5>
+            <div class="bg-white border-gray-300 h-full">
+                <div class="p-4" style="height: 104%; overflow-y: auto;">
+                    <h5 class="text-3xl font-bold ml-2">Activities on CV</h5>
                     <div class="mt-2">
                         <ul class="flex border-b">
-                            <li class="-mb-px mr-1">
-                                <a class="bg-white inline-block border-l border-t border-r rounded-t py-2 px-4 text-yellow-600 font-semibold" href="#">All</a>
+                            <li class="mr-1">
+                                <a class="inline-block py-2 px-4 text-black-600 font-semibold border-b-2 border-transparent hover:border-yellow-600 active:border-black-600" href="#" data-tab="all">All</a>
                             </li>
                             <li class="mr-1">
-                                <a class="bg-white inline-block py-2 px-4 text-gray-600 hover:text-yellow-600 font-semibold" href="#">Messages (2)</a>
+                                <a class="inline-block py-2 px-4 text-gray-600 hover:text-yellow-600 font-semibold border-b-2 border-transparent hover:border-black-600 active:border-yellow-600" href="#" data-tab="messages">Messages (2)</a>
                             </li>
                             <li class="mr-1">
-                                <a class="bg-white inline-block py-2 px-4 text-gray-600 hover:text-yellow-600 font-semibold" href="#">Notes (6)</a>
+                                <a class="inline-block py-2 px-4 text-gray-600 hover:text-yellow-600 font-semibold border-b-2 border-transparent hover:border-black-600 active:border-yellow-600" href="#" data-tab="notes">Notes (6)</a>
                             </li>
                             <li class="mr-1">
-                                <a class="bg-white inline-block py-2 px-4 text-gray-600 hover:text-yellow-600 font-semibold" href="#">Tags (2)</a>
+                                <a class="inline-block py-2 px-4 text-gray-600 hover:text-yellow-600 font-semibold border-b-2 border-transparent hover:border-black-600 active:border-yellow-600" href="#" data-tab="tags">Tags (2)</a>
                             </li>
                             <li class="mr-1">
-                                <a class="bg-white inline-block py-2 px-4 text-gray-600 hover:text-yellow-600 font-semibold" href="#">Attachments (1)</a>
+                                <a class="inline-block py-2 px-4 text-gray-600 hover:text-yellow-600 font-semibold border-b-2 border-transparent hover:border-black-600 active:border-yellow-600" href="#" data-tab="attachments">Attachments (1)</a>
                             </li>
                             <li class="mr-1">
-                                <a class="bg-white inline-block py-2 px-4 text-gray-600 hover:text-yellow-600 font-semibold" href="#">More</a>
+                                <a class="inline-block py-2 px-4 text-gray-600 hover:text-yellow-600 font-semibold border-b-2 border-transparent hover:border-black-600 active:border-yellow-600" href="#" data-tab="more">More</a>
                             </li>
                         </ul>
                     </div>
@@ -173,14 +144,17 @@
                         <div class="tab-content active" id="all">
                             All content here...
                         </div>
-                        <div class="tab-content" id="messages" style="display:none;">Messages content here...</div>
-                        <div class="tab-content" id="notes" style="display:none;">Notes content here...</div>
-                        <div class="tab-content" id="tags" style="display:none;">Tags content here...</div>
-                        <div class="tab-content" id="attachments" style="display:none;">Attachments content here...</div>
+                        <div class="tab-content hidden" id="messages">Messages content here...</div>
+                        <div class="tab-content hidden" id="notes">Notes content here...</div>
+                        <div class="tab-content hidden" id="tags">Tags content here...</div>
+                        <div class="tab-content hidden" id="attachments">Attachments content here...</div>
+                        <div class="tab-content hidden" id="more">More content here...</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

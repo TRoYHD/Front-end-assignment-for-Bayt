@@ -1,15 +1,16 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const tabs = document.querySelectorAll(".tab-content");
-    const links = document.querySelectorAll("ul.flex.border-b a");
+document.addEventListener('DOMContentLoaded', function () {
+    const options = document.querySelectorAll('#hiringStage option');
+    options.forEach(option => {
+        option.style.fontWeight = '600'; // Semi-bold
+    });
+    // Swipe functionality for the profile section
+    const swipeButton = document.querySelector(".swipe-button");
+    const swipeCard = document.querySelector(".swipe-card");
 
-    links.forEach((link, index) => {
-        link.addEventListener("click", (event) => {
-            event.preventDefault();
-            tabs.forEach((tab) => tab.classList.remove("active"));
-            tabs[index].classList.add("active");
-
-            links.forEach((link) => link.classList.remove("text-yellow-600"));
-            link.classList.add("text-yellow-600");
-        });
+    swipeButton.addEventListener("click", function () {
+        swipeCard.classList.add("swiped");
+        setTimeout(() => {
+            swipeCard.classList.remove("swiped");
+        }, 1000); // Adjust the duration as needed
     });
 });
