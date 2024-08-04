@@ -1,7 +1,6 @@
 document.getElementById('registrationForm').addEventListener('submit', function(event) {
     event.preventDefault(); 
 
-    // Reset all error messages
     const errors = document.querySelectorAll('.error');
     errors.forEach(error => error.style.display = 'none');
 
@@ -30,6 +29,6 @@ document.getElementById('registrationForm').addEventListener('submit', function(
 
     if (!hasError) {
         alert('Form submitted successfully!');
-        // You can add code here to send the form data to the server
+        document.getElementById('registrationForm').reset();
     }
 });
