@@ -1,5 +1,5 @@
 document.getElementById('registrationForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form submission
+    event.preventDefault(); 
 
     // Reset all error messages
     const errors = document.querySelectorAll('.error');
